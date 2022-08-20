@@ -1,0 +1,39 @@
+
+        <%-include('../Includes/Header.ejs')%>
+    </head>
+    <body>
+        <%-include('../Includes/Navbar.ejs')%>
+
+        <div class="card" style="width: 18rem;">
+            
+            <div class="card-body">
+                <p>Registration Form</p>
+                <form action="/formdata" method="POST">
+                  <input type="hidden" value="<%=csrf_token%>" name="_csrf">
+                    <label for="fname">Firstname</label><br>
+                    <input type="text" name="fname"><br>
+                    <label for="lname">Lastname</label><br>
+                    <input type="text" name="lname"><br>
+                    <label for="email">Email</label><br>
+                    <input type="text" name="email"><br>
+                    <label for="password">Password</label><br>
+                    <input type="text" id="password" name="password"><br><br>
+                    <div>
+                    <%if (error.length>0){%>
+                      <%for(let err of error){%>
+                        <div><h6 style="color:red;"><%=err.msg%></h6></div>
+                     <%}%>
+                     <%}%>
+                      </div>
+                      <br>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <%if(errorMsg){%>
+                        <div class="errorMessage">
+                          <p><%=errorMsg%></p>
+                        </div>
+                        <%}%>
+                  </form> 
+              
+            </div>
+          </div>
+    <%-include('../Includes/Footer.ejs')%>

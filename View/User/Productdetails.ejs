@@ -1,0 +1,54 @@
+     <%-include('../Includes/Header.ejs')%>
+<link rel="stylesheet" href="/CSS/proddetails.css" type="text/css">
+</head>
+<body>
+      <%-include('../Includes/Navbar.ejs')%>
+ 
+      
+      <div class="height d-flex justify-content-center align-items-center">
+    
+          <div class="card p-3">
+              
+              <div class="d-flex justify-content-between align-items-center ">
+                  <div class="mt-2">
+                      <div class="mt-5">
+                         <div class="product-title"><h5>Product Title:</h5><h3><%=data.pTitle%></h3></div>
+                         <div class="product-desc"><h5>Product Description:</h5><h5><%=data.pDesc%></h5></div>
+                         <div class="product-price"><h5>Product Price:</h5><h6><%=data.pPrice%></h6></div>
+                          <div class="stock"><h5>In Stock</h5></div>
+                          <div class="d-flex flex-row user-ratings">
+                              <div class="ratings">
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              <i class="fa fa-star"></i>
+                              </div>
+                              <h6 class="text-muted ml-1">4/5</h6>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="image">
+                      <img src="../../<%=data.pImage%>" width="200">
+                  </div>
+              </div>
+              
+              <div class="d-flex justify-content-between align-items-center mt-2 mb-2">
+                  <span>Available colors</span>
+                  <div class="colors">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                  </div>
+                  
+              </div>
+              <form action="/addToCart" method="POST">
+                <input type="hidden" value="<%=csrf_token%>" name="_csrf">
+                <input type="hidden" name="quantity" value="1">
+                <input type="hidden" name="productId" value="<%=data._id%>">
+                <input type="submit" value="Add to Cart" class="btn btn-primary">
+            </form>
+
+          </div>
+          
+      </div> 

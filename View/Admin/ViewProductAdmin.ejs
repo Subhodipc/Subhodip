@@ -1,0 +1,45 @@
+<%-include('../Includes/Header.ejs')%>
+
+    <link rel="stylesheet" href="/CSS/prodadmin.css" type="text/css">
+    </head>
+    <body>
+        <%-include('../Includes/Navbar.ejs')%>
+        <div class="head">
+        <h1>Different Products</h1>
+    </div>
+        <hr>
+        <%if(data.length>0) {%>
+           
+            <table border="2">
+                <tr>
+                    <th>Serial Number: </th>
+                    
+                    <th>Product Title: </th>
+                    
+                    <th>Product Price: </th>
+                    
+                    <th>Product DESC: </th>
+                    <th>Edit Here: </th>
+                    <th>Delete Here: </th>
+                    <th>Images: </th>
+                </tr>
+            <%for(let i=0; i< data.length ; i++) {%>
+                <tr>
+                    <td><%= i+1 %></td>
+                    
+                    <td><%= data[i].pTitle%></td>
+                    <td><%= data[i].pPrice%></td>
+                    <td><%= data[i].pDesc%></td>
+                    <td><button type="submit"  class="edit-btn"> <a href="/adminEditProduct/<%=data[i]._id%>">Edit</a> </button></td>
+                    <td><button type="delete"  class="delete-btn"> <a href="/deleteProductAdmin/<%=data[i]._id%>">Delete</a> </button></td>
+                    <td>
+                        <img src=<%=data[i].pImage%> width="100" height="50">
+                    </td>
+                </tr>
+            <%}%>
+        </table>
+        <%}else{%>
+            <h2>DATA NOT FOUND</h2>
+        <%}%>
+    <%-include('../Includes/Footer.ejs')%>
+    

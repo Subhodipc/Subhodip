@@ -1,0 +1,27 @@
+
+        <%-include('../Includes/Header.ejs')%>
+    </head>
+    <body>
+        <%-include('../Includes/Navbar.ejs')%>
+
+        <div class="card" style="width: 18rem;">
+            
+            <div class="card-body">
+                <p>Login Form</p>
+                <form action="/logindata" method="POST">
+                  <input type="hidden" value="<%=csrf_token%>" name="_csrf">
+                    <label for="email">Email</label><br>
+                    <input type="text" name="email"><br>
+                    <label for="password">Password</label><br>
+                    <input type="text" id="password" name="password"><br><br>
+                    <button type="submit" class="btn btn-primary">Login</button><br><br>
+                    <a href="/forgot" target="_blank">Forgot Password?</a>
+                    <%if(errorMsg){%>
+                        <div class="errorMessage">
+                          <p><%=errorMsg%></p>
+                        </div>
+                        <%}%>
+                  </form>
+            </div>
+          </div>
+    <%-include('../Includes/Footer.ejs')%>

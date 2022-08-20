@@ -1,0 +1,25 @@
+body{
+    background-color:#38b0d7;
+}
+h2{
+    color: aliceblue;
+    text-align: center;
+}
+.height{
+    
+    height:1000vh;
+}
+
+.card{
+    margin: 50px;
+    width:200px;
+    height:400px;
+}
+.prod-image{
+    top:10px;
+    width: auto;
+    height: auto;
+}
+.prod-title{
+            margin-top: 100px;
+}

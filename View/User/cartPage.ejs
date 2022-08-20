@@ -1,0 +1,22 @@
+<%-include('../Includes/Header.ejs')%>
+
+       <link rel="stylesheet" href="/CSS/cart.css" type="text/css">
+</head>
+<body>
+    <%-include('../Includes/Navbar.ejs')%>
+
+    <h2>Cart Page</h2>
+
+    <% if(data.length>0){%>
+        <%for(let a of data){%>
+            <h3><%=a.cart[0].pTitle%></h3>
+            <h4><%=a.cart[0].pPrice%></h4>
+            <h5><%=a.quantity%></h5>
+
+
+            <%}%>
+            <%}else{%>
+                <h2>DATA NOT FOUND</h2>
+                <%}%>
+
+<%-include('../Includes/Footer.ejs') %>

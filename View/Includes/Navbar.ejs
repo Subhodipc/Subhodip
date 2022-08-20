@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="/CSS/footer.css" type="text/css">
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <img src="/Img/Ecart.png" alt="image" width="100" height="60">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <ul class="navbar-nav">
+        
+        <%if(!isAuthenticated){%>
+          <li class="nav-item">
+            <a class="nav-link text-white <%= path === '/Add_product' ? 'active' : '' %>" href="/Add_product">Add_product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white <%= path === '/viewproduct' ? 'active' : '' %>" href="/viewproduct">viewproduct</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link text-white <%= path === '/user/product' ? 'active' : '' %>" href="/user/product">userproduct</a>
+        </li>
+            <li class="nav-item">
+              <a class="nav-link text-white <%= path === '/form' ? 'active' : '' %>" href="/form">Registration</a></li>
+            <li class="nav-item">
+              <a class="nav-link text-white <%= path === '/login_form' ? 'active' : '' %>" href="/login_form">Login</a></li>
+          <%}%>
+          </ul>
+        </li>
+        <%if(isAuthenticated){%>
+          <li class="nav-item">
+            <a class="nav-link text-white <%= path === '/cartPage' ? 'active' : '' %>" href="/cartPage">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white <%= path === '/user/product' ? 'active' : '' %>" href="/user/product">userproduct</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white <%= path === '/profile' ? 'active' : '' %>" href="/profile">Profile</a></li>
+        <li class="nav-item">
+          <button type="submit"><a href="formLogOut"><i class="fa fa-sign-out"></i>Logout</a></button>
+        </li>
+        <%}%>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,27 @@
+
+        <%-include('../Includes/Header.ejs')%>
+        <link rel="stylesheet" href="/CSS/dashboard.css" type="text/css">
+    </head>
+    <body>
+        <%-include('../Includes/Navbar.ejs')%>
+
+        <div class="container d-flex justify-content-center">
+            <div class="card p-3 py-4">
+                <div class="text-center"> 
+                <img src="/Img/profile.png" width="100" class="rounded-circle">
+                    <h3 class="mt-2"><%=data.fname%> <%=data.lname%></h3>
+                    <span class="mt-1 clearfix"><%=data.email%></span>
+                    
+                    <hr class="line">
+                    
+                 <div class="profile mt-5">
+                     
+                     <button class="profile_button px-5"><a href="/EditProfile">Edit profile</a></button>
+        
+                </div>
+                       
+                </div>
+            </div>
+        </div>
+        
+    <%-include('../Includes/Footer.ejs')%>

@@ -1,0 +1,28 @@
+
+        <%-include('../Includes/Header.ejs')%>
+    </head>
+    <body>
+        <%-include('../Includes/Navbar.ejs')%>
+
+        <div class="card" style="width: 18rem;">
+            
+            <div class="card-body">
+                <p>Add Products</p>
+                <form action="/productdata" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" value="<%=csrf_token%>" name="_csrf">
+                    <label for="ptitle">Product Title*</label><br>
+                    <input type="text" id="ptitle" name="ptitle" value="Enter Title"><br>
+                    <label for="price">Product Price*</label><br>
+                    <input type="text" id="price" name="price" value="Product Price"><br>
+                    <label for="pdesc">Description</label><br>
+                    <input type="text" id="pdesc" name="pdesc" value="Description"><br><br>
+                    <label for="pimage">Product Image</label><br>
+                    <input type="file" id="pimage" name="pimage" value="Product Image"><br><br>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                  </form> 
+              
+            </div>
+          </div>
+    <%-include('../Includes/Footer.ejs')%>
+
+    

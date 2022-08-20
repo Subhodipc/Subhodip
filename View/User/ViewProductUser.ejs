@@ -1,0 +1,35 @@
+<%-include('../Includes/Header.ejs') %>
+<link rel="stylesheet" href="/CSS/userprod.css" type="text/css">
+</head>
+<body>
+    <%-include('../Includes/Navbar.ejs')%>
+    <h2>Products in user side</h2>
+    <hr>
+    <form action="/search/products" method="POST" class="d-flex">
+      <input type="hidden" value="<%=csrf_token%>" name="_csrf">
+      <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="searchproduct">
+      <button type="submit" class="btn btn-info">Search</button>
+    </form>
+    <%if(data.length>0) {%>
+        <div class="row">
+        <%for(let userProd of data) {%>
+        <div class="col-md-3 col-lg-4   ">
+        <div class="card" style="width: 18rem;">
+            
+            <div class="card-body">
+              <img src="/<%=userProd.pImage%>" alt="image" width="200">
+              <h5 class="prod-title"><%=userProd.pTitle%></h5>
+              <h5 class="prod-price"><i class="fa fa-inr"></i><%=userProd.pPrice%></h5>
+              <input type="hidden" value="<%=userProd.pImage%>" name="prod-image">
+              <button class="btn btn-outline-danger"><a href="/userSideID/<%=userProd._id%>">Details</a></button>
+            </div>
+          </div>
+        </div>
+          <%}%>
+        </div>
+    <%}else{%>
+        <h2>DATA NOT FOUND</h2>
+    <%}%>
+
+
+<%-include('../Includes/Footer.ejs') %>

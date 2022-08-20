@@ -1,0 +1,21 @@
+body{
+    background-color: #16dd8a;
+
+}
+.main_section{
+    border: 2px solid rgb(87, 202, 11);
+    margin: 100px 100px;
+    margin-left: 500px;
+    height: 350px;
+    width: 300px;
+}
+.form_section{
+    background-color: rebeccapurple;
+    padding: 15px 15px;
+}
+.button{
+    background-color: blue;
+    border: 1px;
+    border-radius: 10px;
+    margin-left: 80px;
+}
